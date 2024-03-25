@@ -1,0 +1,28 @@
+[
+    {
+      "question": "The more you take, the more you leave behind. What am I?",
+      "answer": "Footsteps",
+      "options": ["Footsteps", "Breath", "Shadows", "Memories"]
+    },
+    {
+      "question": "What has keys but can't open locks?",
+      "answer": "A piano",
+      "options": ["A piano", "A typewriter", "A computer keyboard", "A doorbell"]
+    },
+    {
+      "question": "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
+      "answer": "An echo",
+      "options": ["An echo", "A ghost", "A thought", "A memory"]
+    },
+    {
+      "question": "What has a head, a tail, is brown, and has no legs?",
+      "answer": "A penny",
+      "options": ["A penny", "A snake", "A caterpillar", "A turtle"]
+    },
+    {
+      "question": "What belongs to you, but other people use it more than you do?",
+      "answer": "Your name",
+      "options": ["Your name", "Your voice", "Your mind", "Your body"]
+    }
+  ]
+  

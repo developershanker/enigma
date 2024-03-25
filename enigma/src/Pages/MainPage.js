@@ -1,11 +1,12 @@
+import './styles.scss';
 import React, {useState} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const MainPage = () => {
     const { slug } = useParams();
     return (
-        <div className="App">
-            <h1>MainPage {slug}</h1>
+        <div className="mainPageStyle">
+            <h1 className='mainPageHeader'>MainPage {slug}</h1>
       </div>
     )
 }
