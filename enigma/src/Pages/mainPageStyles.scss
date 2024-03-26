@@ -1,0 +1,39 @@
+@import '../utils/colors.scss';
+
+.mainPageStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $APP_BACKGROUND;
+
+    .mainPageHeader {
+        display: flex;
+        flex-direction: column;
+        color: white;
+    }
+
+    .questionArea {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        color: antiquewhite;
+    }
+
+    .singleQueArea {
+        display: flex;
+        align-items: flex-start;
+        align-self: flex-start;
+        margin-left: 30px;
+    }
+
+    .singleOption {
+        color: white;
+        padding: 10px 20px;
+        background-color: navy;
+        border-radius: 12px;
+        border-color: orange;
+        border-width: 1px;
+        margin: 10px;
+    }
+}
