@@ -5,7 +5,7 @@ import './mainPageStyles.scss';
 
 const MainPage = () => {
     const { slug } = useParams();
-    const [seconds, setSeconds] = useState(120);
+    const [seconds, setSeconds] = useState(60);
     const [isSelectedOption, setIsSelectedOption] = useState('');
     const [selectedRiddle, setSelectedRiddle] = useState([]);
     const [intervalId, setIntervalId] = useState(null);
