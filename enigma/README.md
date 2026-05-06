@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# ENIGMA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A riddle game built with React. Answer riddles against the clock, earn points based on speed and accuracy, and climb the leaderboard.
 
-## Available Scripts
+** https://enigma-black.vercel.app/ ** &nbsp;·&nbsp; **[Report Bug](https://github.com/developershanker/enigma/issues)**
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> Home Page · Game Page · Results Page · Leaderboard
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **3 difficulty levels** — Easy, Medium, and Hard riddle pools (15 riddles total)
+- **20-second countdown timer** — SVG circular timer that pulses red in the final 7 seconds
+- **Live scoring** — 10 base points + seconds remaining for each correct answer (max 150 pts)
+- **Instant feedback** — options flash green or shake red immediately after selection
+- **Results breakdown** — per-question summary showing your answer vs the correct one
+- **Persistent leaderboard** — top 10 scores saved to localStorage across sessions
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **React 18** with React Router v6
+- **SCSS** with BEM naming
+- **Google Fonts** — Cinzel (headers) + Inter (body)
+- **localStorage** for score persistence
+- No external UI libraries
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+# Clone the repo
+git clone https://github.com/developershanker/enigma.git
+cd enigma/enigma
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Install dependencies
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Start the dev server
+npm start
+Open http://localhost:3000 in your browser.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+How to Play
+Enter your name on the home screen
+Choose a difficulty — Easy, Medium, or Hard
+Answer 5 riddles before the 20-second timer runs out each round
+Your score = 10 pts (base) + seconds remaining per correct answer
+View your breakdown on the results screen and check the leaderboard
+Project Structure
+src/
+├── components/
+│   ├── Timer.js          # SVG circular countdown
+│   ├── OptionCard.js     # Answer button (5 visual states)
+│   └── ProgressBar.js    # Riddle progress dots
+├── Pages/
+│   ├── Home.js           # Name input + difficulty selection
+│   ├── Game.js           # Core game loop
+│   ├── Results.js        # Score summary + breakdown
+│   └── Leaderboard.js    # Top-10 scores
+└── utils/
+    ├── data.json         # 15 riddles across 3 difficulties
+    └── storage.js        # localStorage helpers
+Scoring
+Outcome	Points
+Correct answer	10 + seconds remaining
+Wrong answer	0
+Timeout	0
+Max per riddle	30
+Max per game	150
+License
+MIT
