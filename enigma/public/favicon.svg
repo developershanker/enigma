@@ -1,13 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#0f0d0b"/>
-  <rect x="1.5" y="1.5" width="29" height="29" rx="5.5" fill="none" stroke="#f97316" stroke-width="1.5"/>
-  <text
-    x="16"
-    y="23"
-    text-anchor="middle"
-    font-family="Georgia, 'Times New Roman', serif"
-    font-size="21"
-    font-weight="bold"
-    fill="#f97316"
-  >?</text>
+  <!-- Background -->
+  <rect width="32" height="32" rx="7" fill="#f97316"/>
+  <!-- ? arc: top hook curves up and over, then drops into stem -->
+  <path
+    d="M10 15 C10 8 22 8 22 14 C22 19 17 19 17 23"
+    stroke="#0f0d0b"
+    stroke-width="3.5"
+    stroke-linecap="round"
+    fill="none"
+  />
+  <!-- ? dot -->
+  <circle cx="17" cy="26.5" r="2.2" fill="#0f0d0b"/>
 </svg>
