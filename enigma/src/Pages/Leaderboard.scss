@@ -1,0 +1,145 @@
+@import '../utils/colors';
+
+.leaderboard {
+  min-height: 100vh;
+  background: $bg;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem 4rem;
+
+  &__content {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fade-up 0.4s ease;
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 8vw, 3rem);
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    background: linear-gradient(135deg, $primary 0%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+
+  &__subtitle {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $text-muted;
+  }
+
+  &__empty {
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 1.5px dashed $border;
+    border-radius: 16px;
+    color: $text-muted;
+    line-height: 2;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__entry {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: 12px;
+    transition: border-color 0.2s;
+
+    &--podium {
+      border-color: rgba($primary, 0.35);
+      background: rgba($primary, 0.04);
+    }
+
+    &--first {
+      border-color: rgba(#fbbf24, 0.55);
+      background: rgba(#fbbf24, 0.05);
+    }
+  }
+
+  &__rank {
+    font-size: 1.3rem;
+    width: 2rem;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: $text;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__meta {
+    font-size: 0.72rem;
+    color: $text-muted;
+    text-transform: capitalize;
+  }
+
+  &__pts {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: $primary;
+    flex-shrink: 0;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__play-btn {
+    padding: 0.9rem 3rem;
+    background: $primary;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.12em;
+    transition: all 0.2s;
+
+    &:hover {
+      background: $primary-dark;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba($primary, 0.35);
+    }
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

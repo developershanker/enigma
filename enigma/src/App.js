@@ -1,16 +1,17 @@
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
-import MainPage from './Pages/MainPage';
+import Game from './Pages/Game';
+import Results from './Pages/Results';
+import Leaderboard from './Pages/Leaderboard';
 
-const App = () => {
-  return (
-    <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path='/mainpage/:slug/:params' element={<MainPage />}/>
-       </Routes>
-
-  );
-}
+const App = () => (
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/game/:name/:difficulty" element={<Game />} />
+    <Route path="/results" element={<Results />} />
+    <Route path="/leaderboard" element={<Leaderboard />} />
+  </Routes>
+);
 
 export default App;
