@@ -1,0 +1,212 @@
+@import '../utils/colors';
+
+.results {
+  min-height: 100vh;
+  background: $bg;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1.5rem 4rem;
+
+  &__content {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    animation: fade-up 0.4s ease;
+  }
+
+  &__hero {
+    text-align: center;
+    padding: 2.25rem 2rem;
+    border-radius: 20px;
+    border: 1.5px solid $border;
+    background: $surface;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    &--gold   { border-color: rgba(#fbbf24, 0.6); }
+    &--silver { border-color: rgba(#94a3b8, 0.5); }
+    &--bronze { border-color: rgba($primary, 0.5); }
+  }
+
+  &__icon {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  &__tier {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+    font-weight: 700;
+    color: $text;
+    margin-top: 0.25rem;
+  }
+
+  &__player {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $text-muted;
+    margin-bottom: 0.5rem;
+  }
+
+  &__score-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+  }
+
+  &__score {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    font-weight: 700;
+    color: $primary;
+    line-height: 1;
+  }
+
+  &__score-max {
+    font-size: 1.25rem;
+    color: $text-muted;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  &__badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $accent;
+    background: rgba($accent, 0.1);
+    border: 1px solid rgba($accent, 0.3);
+    border-radius: 20px;
+    padding: 0.2rem 0.7rem;
+  }
+
+  &__correct {
+    font-size: 0.8rem;
+    color: $text-muted;
+  }
+
+  &__breakdown {
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+
+  &__breakdown-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $text-muted;
+    margin-bottom: 1.1rem;
+  }
+
+  &__item {
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    border: 1px solid $border;
+    margin-bottom: 0.65rem;
+
+    &:last-child { margin-bottom: 0; }
+
+    &--correct {
+      border-color: rgba($success, 0.3);
+      background: rgba($success, 0.04);
+    }
+
+    &--wrong {
+      border-color: rgba($error, 0.3);
+      background: rgba($error, 0.04);
+    }
+  }
+
+  &__item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+  }
+
+  &__item-icon {
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    .results__item--correct & { color: $success; }
+    .results__item--wrong &   { color: $error; }
+  }
+
+  &__item-pts {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: $primary;
+  }
+
+  &__item-q {
+    font-size: 0.88rem;
+    color: $text;
+    line-height: 1.5;
+    margin-bottom: 0.3rem;
+  }
+
+  &__item-ans {
+    font-size: 0.78rem;
+    color: $text-muted;
+
+    strong { color: $success; }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  &__btn {
+    flex: 1;
+    padding: 0.95rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+
+    &--primary {
+      background: $primary;
+      border: none;
+      color: white;
+
+      &:hover {
+        background: $primary-dark;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba($primary, 0.3);
+      }
+    }
+
+    &--secondary {
+      background: $surface;
+      border: 1.5px solid $border;
+      color: $text;
+
+      &:hover {
+        border-color: $text-muted;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

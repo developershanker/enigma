@@ -1,0 +1,25 @@
+@import '../utils/colors';
+
+.progress-bar {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 1rem 1.5rem 0.25rem;
+
+  &__dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 4px;
+    background: $border;
+    transition: all 0.35s ease;
+
+    &--active {
+      width: 28px;
+      background: $primary;
+    }
+
+    &--done {
+      background: rgba($primary, 0.45);
+    }
+  }
+}

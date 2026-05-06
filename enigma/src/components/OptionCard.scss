@@ -1,0 +1,61 @@
+@import '../utils/colors';
+
+.option-card {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1.5px solid $border;
+  background: $card;
+  color: $text;
+  font-size: 0.95rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 500;
+  text-align: left;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+
+  &:hover:not(:disabled) {
+    border-color: $primary;
+    background: rgba($primary, 0.08);
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &--selected {
+    border-color: $primary;
+    background: rgba($primary, 0.12);
+    color: $primary;
+    font-weight: 600;
+  }
+
+  &--correct {
+    border-color: $success;
+    background: rgba($success, 0.12);
+    color: $success;
+    font-weight: 600;
+    animation: pop 0.35s ease;
+  }
+
+  &--wrong {
+    border-color: $error;
+    background: rgba($error, 0.12);
+    color: $error;
+    font-weight: 600;
+    animation: shake 0.4s ease;
+  }
+}
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-6px); }
+  75%       { transform: translateX(6px); }
+}

@@ -1,28 +1,107 @@
 [
-    {
-      "question": "The more you take, the more you leave behind. What am I?",
-      "answer": "Footsteps",
-      "options": ["Footsteps", "Breath", "Shadows", "Memories"]
-    },
-    {
-      "question": "What has keys but can't open locks?",
-      "answer": "A piano",
-      "options": ["A piano", "A typewriter", "A computer keyboard", "A doorbell"]
-    },
-    {
-      "question": "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
-      "answer": "An echo",
-      "options": ["An echo", "A ghost", "A thought", "A memory"]
-    },
-    {
-      "question": "What has a head, a tail, is brown, and has no legs?",
-      "answer": "A penny",
-      "options": ["A penny", "A snake", "A caterpillar", "A turtle"]
-    },
-    {
-      "question": "What belongs to you, but other people use it more than you do?",
-      "answer": "Your name",
-      "options": ["Your name", "Your voice", "Your mind", "Your body"]
-    }
-  ]
-  
+  {
+    "id": 1,
+    "difficulty": "easy",
+    "question": "The more you take, the more you leave behind. What am I?",
+    "answer": "Footsteps",
+    "options": ["Footsteps", "Breath", "Shadows", "Memories"]
+  },
+  {
+    "id": 2,
+    "difficulty": "easy",
+    "question": "What has keys but can't open locks?",
+    "answer": "A piano",
+    "options": ["A piano", "A typewriter", "A computer", "A doorbell"]
+  },
+  {
+    "id": 3,
+    "difficulty": "easy",
+    "question": "I have hands but cannot clap. What am I?",
+    "answer": "A clock",
+    "options": ["A clock", "A robot", "A scarecrow", "A statue"]
+  },
+  {
+    "id": 4,
+    "difficulty": "easy",
+    "question": "What gets wetter as it dries?",
+    "answer": "A towel",
+    "options": ["A towel", "A sponge", "A cloud", "A fish"]
+  },
+  {
+    "id": 5,
+    "difficulty": "easy",
+    "question": "What can you catch but not throw?",
+    "answer": "A cold",
+    "options": ["A cold", "A ball", "A wave", "A shadow"]
+  },
+  {
+    "id": 6,
+    "difficulty": "medium",
+    "question": "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
+    "answer": "An echo",
+    "options": ["An echo", "A ghost", "A thought", "A memory"]
+  },
+  {
+    "id": 7,
+    "difficulty": "medium",
+    "question": "What has a head, a tail, is brown, and has no legs?",
+    "answer": "A penny",
+    "options": ["A penny", "A snake", "A caterpillar", "A worm"]
+  },
+  {
+    "id": 8,
+    "difficulty": "medium",
+    "question": "I have cities but no houses. Mountains but no trees. Water but no fish. What am I?",
+    "answer": "A map",
+    "options": ["A map", "A painting", "A dream", "A mirror"]
+  },
+  {
+    "id": 9,
+    "difficulty": "medium",
+    "question": "The more you take away from me, the bigger I become. What am I?",
+    "answer": "A hole",
+    "options": ["A hole", "A shadow", "A secret", "A debt"]
+  },
+  {
+    "id": 10,
+    "difficulty": "medium",
+    "question": "I can fly without wings. I can cry without eyes. Wherever I go, darkness flees. What am I?",
+    "answer": "A cloud",
+    "options": ["A cloud", "A bat", "An angel", "A comet"]
+  },
+  {
+    "id": 11,
+    "difficulty": "hard",
+    "question": "What belongs to you, but other people use it more than you do?",
+    "answer": "Your name",
+    "options": ["Your name", "Your voice", "Your mind", "Your body"]
+  },
+  {
+    "id": 12,
+    "difficulty": "hard",
+    "question": "What has a spine and thousands of leaves, but is not a tree?",
+    "answer": "A book",
+    "options": ["A book", "A cactus", "A porcupine", "A forest"]
+  },
+  {
+    "id": 13,
+    "difficulty": "hard",
+    "question": "What can run but never walks, has a mouth but never talks, has a head but never weeps?",
+    "answer": "A river",
+    "options": ["A river", "A train", "A clock", "A road"]
+  },
+  {
+    "id": 14,
+    "difficulty": "hard",
+    "question": "I'm not alive but I grow. I need air but have no lungs. Water kills me. What am I?",
+    "answer": "Fire",
+    "options": ["Fire", "A candle", "A volcano", "A plant"]
+  },
+  {
+    "id": 15,
+    "difficulty": "hard",
+    "question": "What has one eye but cannot see?",
+    "answer": "A needle",
+    "options": ["A needle", "A storm", "A button", "A camera"]
+  }
+]
