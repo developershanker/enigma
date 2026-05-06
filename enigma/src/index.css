@@ -4,15 +4,30 @@
   padding: 0;
 }
 
+html {
+  /* Prevent font scaling in landscape on iOS */
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: #0f0d0b;
   color: #fafaf9;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
 }
 
 button {
   cursor: pointer;
+  /* Prevent double-tap zoom on iOS */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
