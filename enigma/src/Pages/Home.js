@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.scss';
 
-const DIFFICULTIES = ['easy', 'medium', 'hard'];
+const DIFFICULTIES = [
+  { key: 'easy',   label: 'Easy',   timer: '25s', hint: 'Classic riddles' },
+  { key: 'medium', label: 'Medium', timer: '20s', hint: 'Lateral thinking' },
+  { key: 'hard',   label: 'Hard',   timer: '15s', hint: 'Mind-benders'     },
+];
 
 const Home = () => {
   const navigate = useNavigate();
@@ -42,11 +46,13 @@ const Home = () => {
             <div className="home__difficulty-btns">
               {DIFFICULTIES.map((d) => (
                 <button
-                  key={d}
-                  className={`home__diff-btn${difficulty === d ? ' home__diff-btn--active' : ''}`}
-                  onClick={() => setDifficulty(d)}
+                  key={d.key}
+                  className={`home__diff-btn${difficulty === d.key ? ' home__diff-btn--active' : ''}`}
+                  onClick={() => setDifficulty(d.key)}
                 >
-                  {d.charAt(0).toUpperCase() + d.slice(1)}
+                  <span className="home__diff-label">{d.label}</span>
+                  <span className="home__diff-timer">{d.timer}</span>
+                  <span className="home__diff-hint">{d.hint}</span>
                 </button>
               ))}
             </div>

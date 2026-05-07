@@ -2,30 +2,30 @@
   {
     "id": 1,
     "difficulty": "easy",
-    "question": "The more you take, the more you leave behind. What am I?",
-    "answer": "Footsteps",
-    "options": ["Footsteps", "Breath", "Shadows", "Memories"]
+    "question": "I have teeth but cannot eat. What am I?",
+    "answer": "A comb",
+    "options": ["A comb", "A saw", "A zipper", "A fork"]
   },
   {
     "id": 2,
     "difficulty": "easy",
-    "question": "What has keys but can't open locks?",
-    "answer": "A piano",
-    "options": ["A piano", "A typewriter", "A computer", "A doorbell"]
+    "question": "What goes up but never comes down?",
+    "answer": "Your age",
+    "options": ["Your age", "A balloon", "The sun", "Smoke"]
   },
   {
     "id": 3,
     "difficulty": "easy",
-    "question": "I have hands but cannot clap. What am I?",
-    "answer": "A clock",
-    "options": ["A clock", "A robot", "A scarecrow", "A statue"]
+    "question": "What is always in front of you but can never be seen?",
+    "answer": "The future",
+    "options": ["The future", "Your nose", "Air", "Your shadow"]
   },
   {
     "id": 4,
     "difficulty": "easy",
     "question": "What gets wetter as it dries?",
     "answer": "A towel",
-    "options": ["A towel", "A sponge", "A cloud", "A fish"]
+    "options": ["A towel", "A sponge", "A cloud", "Sand"]
   },
   {
     "id": 5,
@@ -36,72 +36,135 @@
   },
   {
     "id": 6,
-    "difficulty": "medium",
-    "question": "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
-    "answer": "An echo",
-    "options": ["An echo", "A ghost", "A thought", "A memory"]
+    "difficulty": "easy",
+    "question": "I have hands but cannot clap. What am I?",
+    "answer": "A clock",
+    "options": ["A clock", "A robot", "A scarecrow", "A glove"]
   },
   {
     "id": 7,
-    "difficulty": "medium",
-    "question": "What has a head, a tail, is brown, and has no legs?",
-    "answer": "A penny",
-    "options": ["A penny", "A snake", "A caterpillar", "A worm"]
+    "difficulty": "easy",
+    "question": "What has keys but can't open any lock?",
+    "answer": "A piano",
+    "options": ["A piano", "A typewriter", "A safe", "A door"]
   },
   {
     "id": 8,
-    "difficulty": "medium",
-    "question": "I have cities but no houses. Mountains but no trees. Water but no fish. What am I?",
-    "answer": "A map",
-    "options": ["A map", "A painting", "A dream", "A mirror"]
+    "difficulty": "easy",
+    "question": "What has one head, one tail, but no body?",
+    "answer": "A coin",
+    "options": ["A coin", "A snake", "A pin", "A nail"]
   },
   {
     "id": 9,
     "difficulty": "medium",
-    "question": "The more you take away from me, the bigger I become. What am I?",
-    "answer": "A hole",
-    "options": ["A hole", "A shadow", "A secret", "A debt"]
+    "question": "The more you take, the more you leave behind. What am I?",
+    "answer": "Footsteps",
+    "options": ["Footsteps", "Memories", "Shadows", "Breath"]
   },
   {
     "id": 10,
     "difficulty": "medium",
-    "question": "I can fly without wings. I can cry without eyes. Wherever I go, darkness flees. What am I?",
-    "answer": "A cloud",
-    "options": ["A cloud", "A bat", "An angel", "A comet"]
+    "question": "I have cities but no houses, mountains but no trees, water but no fish. What am I?",
+    "answer": "A map",
+    "options": ["A map", "A painting", "A dream", "A globe"]
   },
   {
     "id": 11,
-    "difficulty": "hard",
-    "question": "What belongs to you, but other people use it more than you do?",
-    "answer": "Your name",
-    "options": ["Your name", "Your voice", "Your mind", "Your body"]
+    "difficulty": "medium",
+    "question": "What has a head, a tail, is brown, and has no legs?",
+    "answer": "A penny",
+    "options": ["A penny", "A snake", "A worm", "A caterpillar"]
   },
   {
     "id": 12,
+    "difficulty": "medium",
+    "question": "I speak without a mouth and hear without ears. I have no body but come alive with the wind. What am I?",
+    "answer": "An echo",
+    "options": ["An echo", "A ghost", "A thought", "The wind"]
+  },
+  {
+    "id": 13,
+    "difficulty": "medium",
+    "question": "I can fly without wings and cry without eyes. Wherever I go, darkness follows. What am I?",
+    "answer": "A cloud",
+    "options": ["A cloud", "A bat", "A storm", "A comet"]
+  },
+  {
+    "id": 14,
+    "difficulty": "medium",
+    "question": "The more you take away from me, the bigger I become. What am I?",
+    "answer": "A hole",
+    "options": ["A hole", "A shadow", "A secret", "A balloon"]
+  },
+  {
+    "id": 15,
+    "difficulty": "medium",
+    "question": "I have a neck but no head, and I wear a cap. What am I?",
+    "answer": "A bottle",
+    "options": ["A bottle", "A jar", "A giraffe", "A mushroom"]
+  },
+  {
+    "id": 16,
+    "difficulty": "medium",
+    "question": "What can travel around the world while staying in a corner?",
+    "answer": "A stamp",
+    "options": ["A stamp", "A shadow", "A satellite", "The wind"]
+  },
+  {
+    "id": 17,
+    "difficulty": "hard",
+    "question": "What belongs to you, but other people use it more than you do?",
+    "answer": "Your name",
+    "options": ["Your name", "Your voice", "Your shadow", "Your reputation"]
+  },
+  {
+    "id": 18,
+    "difficulty": "hard",
+    "question": "I'm not alive but I grow. I need air but have no lungs. Water kills me. What am I?",
+    "answer": "Fire",
+    "options": ["Fire", "A plant", "A candle", "A volcano"]
+  },
+  {
+    "id": 19,
+    "difficulty": "hard",
+    "question": "The more you have of me, the less you see. What am I?",
+    "answer": "Darkness",
+    "options": ["Darkness", "Fog", "Smoke", "Sleep"]
+  },
+  {
+    "id": 20,
+    "difficulty": "hard",
+    "question": "I can be cracked, made, told, and played. What am I?",
+    "answer": "A joke",
+    "options": ["A joke", "A game", "A riddle", "An egg"]
+  },
+  {
+    "id": 21,
+    "difficulty": "hard",
+    "question": "I have keys but no locks, space but no room. You can enter but cannot go inside. What am I?",
+    "answer": "A keyboard",
+    "options": ["A keyboard", "A safe", "A computer", "A piano"]
+  },
+  {
+    "id": 22,
     "difficulty": "hard",
     "question": "What has a spine and thousands of leaves, but is not a tree?",
     "answer": "A book",
     "options": ["A book", "A cactus", "A porcupine", "A forest"]
   },
   {
-    "id": 13,
+    "id": 23,
     "difficulty": "hard",
-    "question": "What can run but never walks, has a mouth but never talks, has a head but never weeps?",
-    "answer": "A river",
-    "options": ["A river", "A train", "A clock", "A road"]
+    "question": "What comes once in a minute, twice in a moment, but never in a thousand years?",
+    "answer": "The letter M",
+    "options": ["The letter M", "Time", "Silence", "A miracle"]
   },
   {
-    "id": 14,
+    "id": 24,
     "difficulty": "hard",
-    "question": "I'm not alive but I grow. I need air but have no lungs. Water kills me. What am I?",
-    "answer": "Fire",
-    "options": ["Fire", "A candle", "A volcano", "A plant"]
-  },
-  {
-    "id": 15,
-    "difficulty": "hard",
-    "question": "What has one eye but cannot see?",
-    "answer": "A needle",
-    "options": ["A needle", "A storm", "A button", "A camera"]
+    "question": "I am light as a feather, yet the strongest person cannot hold me for more than a few minutes. What am I?",
+    "answer": "Breath",
+    "options": ["Breath", "A feather", "A thought", "A cloud"]
   }
 ]
