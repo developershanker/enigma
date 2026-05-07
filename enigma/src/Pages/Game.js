@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import data from '../utils/data.json';
+import dataEn from '../utils/data.json';
+import dataHi from '../utils/data.hi.json';
+import { useLanguage } from '../context/LanguageContext';
 import Timer from '../components/Timer';
 import OptionCard from '../components/OptionCard';
 import ProgressBar from '../components/ProgressBar';
@@ -14,6 +16,7 @@ const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
 const Game = () => {
   const { name, difficulty } = useParams();
   const navigate = useNavigate();
+  const { lang, t } = useLanguage();
 
   const timeLimit = TIMER_BY_DIFFICULTY[difficulty] ?? 20;
 
@@ -36,14 +39,16 @@ const Game = () => {
 
   // Load and shuffle riddles + shuffle each riddle's options
   useEffect(() => {
+    const data = lang === 'hi' ? dataHi : dataEn;
     const pool = data.filter((r) => r.difficulty === difficulty);
     const picked = shuffle(pool)
       .slice(0, RIDDLES_PER_GAME)
       .map((r) => ({ ...r, options: shuffle(r.options) }));
     setRiddles(picked);
     answersRef.current = [];
+    setIdx(0);
     setPhase('playing');
-  }, [difficulty]);
+  }, [difficulty, lang]);
 
   // Countdown — restarts on each new riddle (idx change) or when phase becomes 'playing'
   useEffect(() => {
@@ -150,7 +155,7 @@ const Game = () => {
     <div className="game">
       <header className="game__header">
         <span className="game__player">{playerName}</span>
-        <span className="game__score">{totalScore} pts</span>
+        <span className="game__score">{totalScore} {t('pts')}</span>
       </header>
 
       <ProgressBar current={idx} total={riddles.length} />
@@ -159,7 +164,7 @@ const Game = () => {
         <Timer seconds={seconds} maxSeconds={timeLimit} />
 
         <div className="game__question">
-          <span className="game__badge">{difficulty}</span>
+          <span className="game__badge">{t(difficulty)}</span>
           <h2>{riddle.question}</h2>
         </div>
 
@@ -177,7 +182,7 @@ const Game = () => {
 
         {phase === 'revealed' && selected === null && (
           <p className="game__timeout-msg">
-            Time's up! The answer was <strong>{riddle.answer}</strong>
+            {t('timesUp')} <strong>{riddle.answer}</strong>
           </p>
         )}
       </main>

@@ -1,26 +1,28 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getLeaderboard } from '../utils/storage';
+import { useLanguage } from '../context/LanguageContext';
 import './Leaderboard.scss';
 
 const MEDALS = ['🥇', '🥈', '🥉'];
 
 const Leaderboard = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const entries = getLeaderboard();
 
   return (
     <div className="leaderboard">
       <div className="leaderboard__content">
         <div className="leaderboard__header">
-          <h1 className="leaderboard__title">ENIGMASTERS</h1>
-          <p className="leaderboard__subtitle">Hall of Fame</p>
+          <h1 className="leaderboard__title">{t('enigmasters')}</h1>
+          <p className="leaderboard__subtitle">{t('hallOfFame')}</p>
         </div>
 
         {entries.length === 0 ? (
           <div className="leaderboard__empty">
-            <p>No scores yet.</p>
-            <p>Be the first to make the board!</p>
+            <p>{t('noScores')}</p>
+            <p>{t('beFirst')}</p>
           </div>
         ) : (
           <div className="leaderboard__list">
@@ -35,10 +37,10 @@ const Leaderboard = () => {
                 <div className="leaderboard__info">
                   <span className="leaderboard__name">{entry.name}</span>
                   <span className="leaderboard__meta">
-                    {entry.difficulty} &middot; {entry.date}
+                    {t(entry.difficulty)} &middot; {entry.date}
                   </span>
                 </div>
-                <span className="leaderboard__pts">{entry.score} pts</span>
+                <span className="leaderboard__pts">{entry.score} {t('pts')}</span>
               </div>
             ))}
           </div>
@@ -49,7 +51,7 @@ const Leaderboard = () => {
             className="leaderboard__play-btn"
             onClick={() => navigate('/')}
           >
-            Play Now
+            {t('playNow')}
           </button>
         </div>
       </div>
