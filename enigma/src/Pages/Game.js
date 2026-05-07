@@ -34,10 +34,12 @@ const Game = () => {
   useEffect(() => { phaseRef.current = phase; }, [phase]);
   useEffect(() => { secondsRef.current = seconds; }, [seconds]);
 
-  // Load and shuffle riddles for the chosen difficulty
+  // Load and shuffle riddles + shuffle each riddle's options
   useEffect(() => {
     const pool = data.filter((r) => r.difficulty === difficulty);
-    const picked = shuffle(pool).slice(0, RIDDLES_PER_GAME);
+    const picked = shuffle(pool)
+      .slice(0, RIDDLES_PER_GAME)
+      .map((r) => ({ ...r, options: shuffle(r.options) }));
     setRiddles(picked);
     answersRef.current = [];
     setPhase('playing');
