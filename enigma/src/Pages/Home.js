@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 import './Home.scss';
 
-const DIFFICULTIES = [
-  { key: 'easy',   label: 'Easy',   timer: '25s', hint: 'Classic riddles' },
-  { key: 'medium', label: 'Medium', timer: '20s', hint: 'Lateral thinking' },
-  { key: 'hard',   label: 'Hard',   timer: '15s', hint: 'Mind-benders'     },
+const DIFFICULTY_KEYS = [
+  { key: 'easy',   timer: '25s' },
+  { key: 'medium', timer: '20s' },
+  { key: 'hard',   timer: '15s' },
 ];
 
 const Home = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const [name, setName] = useState('');
   const [difficulty, setDifficulty] = useState('medium');
 
@@ -27,14 +29,14 @@ const Home = () => {
       <div className="home__content">
         <div className="home__brand">
           <h1 className="home__title">ENIGMA</h1>
-          <p className="home__tagline">Test your mind &middot; Beat the clock</p>
+          <p className="home__tagline">{t('tagline')}</p>
         </div>
 
         <div className="home__form">
           <input
             className="home__input"
             type="text"
-            placeholder="Enter your name"
+            placeholder={t('enterName')}
             value={name}
             maxLength={20}
             onChange={(e) => setName(e.target.value)}
@@ -42,17 +44,17 @@ const Home = () => {
           />
 
           <div className="home__difficulty">
-            <p className="home__difficulty-label">Difficulty</p>
+            <p className="home__difficulty-label">{t('difficulty')}</p>
             <div className="home__difficulty-btns">
-              {DIFFICULTIES.map((d) => (
+              {DIFFICULTY_KEYS.map((d) => (
                 <button
                   key={d.key}
                   className={`home__diff-btn${difficulty === d.key ? ' home__diff-btn--active' : ''}`}
                   onClick={() => setDifficulty(d.key)}
                 >
-                  <span className="home__diff-label">{d.label}</span>
+                  <span className="home__diff-label">{t(d.key)}</span>
                   <span className="home__diff-timer">{d.timer}</span>
-                  <span className="home__diff-hint">{d.hint}</span>
+                  <span className="home__diff-hint">{t(`${d.key}Hint`)}</span>
                 </button>
               ))}
             </div>
@@ -63,7 +65,7 @@ const Home = () => {
             onClick={handleStart}
             disabled={!name.trim()}
           >
-            Start Game
+            {t('startGame')}
           </button>
         </div>
 
@@ -71,7 +73,7 @@ const Home = () => {
           className="home__leaderboard-link"
           onClick={() => navigate('/leaderboard')}
         >
-          &#x1F3C6; View Leaderboard
+          {t('viewLeaderboard')}
         </button>
       </div>
     </div>
