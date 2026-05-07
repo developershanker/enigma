@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { saveScore } from '../utils/storage';
+import Confetti from '../components/Confetti';
+import RiseParticles from '../components/RiseParticles';
 import './Results.scss';
 
 const getTier = (pct) => {
-  if (pct >= 80) return { label: 'Brilliant!',     icon: '🏆', cls: 'gold' };
-  if (pct >= 50) return { label: 'Well Done!',     icon: '⭐', cls: 'silver' };
-  return           { label: 'Keep Trying!',         icon: '💪', cls: 'bronze' };
+  if (pct >= 80) return { label: 'Brilliant!',  icon: '🏆', cls: 'gold',   animation: 'confetti' };
+  if (pct >= 50) return { label: 'Well Done!',  icon: '⭐', cls: 'silver', animation: 'sparkle'  };
+  return           { label: 'Keep Trying!', icon: '💪', cls: 'bronze', animation: 'rise'     };
 };
 
 const Results = () => {
@@ -36,6 +38,11 @@ const Results = () => {
 
   return (
     <div className="results">
+      {/* Animations — rendered behind content via z-index */}
+      {tier.animation === 'confetti' && <Confetti />}
+      {tier.animation === 'sparkle'  && <Confetti count={45} gold />}
+      {tier.animation === 'rise'     && <RiseParticles />}
+
       <div className="results__content">
 
         <div className={`results__hero results__hero--${tier.cls}`}>
