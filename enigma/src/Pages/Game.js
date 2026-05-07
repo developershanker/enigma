@@ -6,7 +6,7 @@ import OptionCard from '../components/OptionCard';
 import ProgressBar from '../components/ProgressBar';
 import './Game.scss';
 
-const TIME_PER_RIDDLE = 20;
+const TIMER_BY_DIFFICULTY = { easy: 25, medium: 20, hard: 15 };
 const RIDDLES_PER_GAME = 5;
 
 const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
@@ -15,15 +15,17 @@ const Game = () => {
   const { name, difficulty } = useParams();
   const navigate = useNavigate();
 
+  const timeLimit = TIMER_BY_DIFFICULTY[difficulty] ?? 20;
+
   const [riddles, setRiddles] = useState([]);
   const [idx, setIdx] = useState(0);
-  const [seconds, setSeconds] = useState(TIME_PER_RIDDLE);
+  const [seconds, setSeconds] = useState(timeLimit);
   const [selected, setSelected] = useState(null);
   const [phase, setPhase] = useState('idle'); // idle | playing | revealed
 
   // Refs to avoid stale closures in async callbacks
   const phaseRef = useRef('idle');
-  const secondsRef = useRef(TIME_PER_RIDDLE);
+  const secondsRef = useRef(timeLimit);
   const answersRef = useRef([]);
   const intervalRef = useRef(null);
   const navigateRef = useRef(navigate);
@@ -41,12 +43,12 @@ const Game = () => {
     setPhase('playing');
   }, [difficulty]);
 
-  // Countdown timer — restarts whenever idx changes or phase becomes 'playing'
+  // Countdown — restarts on each new riddle (idx change) or when phase becomes 'playing'
   useEffect(() => {
     if (phase !== 'playing') return;
 
-    setSeconds(TIME_PER_RIDDLE);
-    secondsRef.current = TIME_PER_RIDDLE;
+    setSeconds(timeLimit);
+    secondsRef.current = timeLimit;
 
     intervalRef.current = setInterval(() => {
       setSeconds((s) => {
@@ -61,7 +63,7 @@ const Game = () => {
     }, 1000);
 
     return () => clearInterval(intervalRef.current);
-  }, [idx, phase]);
+  }, [idx, phase, timeLimit]);
 
   const finishGame = useCallback((finalAnswers) => {
     const totalScore = finalAnswers.reduce((sum, a) => sum + a.points, 0);
@@ -72,10 +74,10 @@ const Game = () => {
         answers: finalAnswers,
         playerName: decodeURIComponent(name),
         difficulty,
-        maxScore: RIDDLES_PER_GAME * (10 + TIME_PER_RIDDLE),
+        maxScore: RIDDLES_PER_GAME * (10 + timeLimit),
       },
     });
-  }, [name, difficulty]);
+  }, [name, difficulty, timeLimit]);
 
   const reveal = useCallback((option) => {
     if (phaseRef.current !== 'playing') return;
@@ -152,7 +154,7 @@ const Game = () => {
       <ProgressBar current={idx} total={riddles.length} />
 
       <main className="game__main">
-        <Timer seconds={seconds} maxSeconds={TIME_PER_RIDDLE} />
+        <Timer seconds={seconds} maxSeconds={timeLimit} />
 
         <div className="game__question">
           <span className="game__badge">{difficulty}</span>
